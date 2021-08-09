@@ -11,7 +11,7 @@ AFRAME.registerComponent('info-banner',{
                 bannerUrl:'./images/infoImage/spiderman.png',
                 title:'Spider Man',
             },
-            justiceLeague:{
+            justiceliague:{
                 bannerUrl:'./images/infoImage/justiceliague.jpg',
                 title:'Justice League',
             },
@@ -31,7 +31,7 @@ AFRAME.registerComponent('info-banner',{
         entityEl.setAttribute('id',`${itemsId}-banner`)
         entityEl.setAttribute('geometry',{
             primitive:'plane',
-            width:1,
+            width:7,
             height:1
         })
         entityEl.setAttribute('position',{x:0,y:0,z:0})
@@ -39,23 +39,26 @@ AFRAME.registerComponent('info-banner',{
             color:'black'
         })
         const item = postersInfo[itemsId]
+        console.log(itemsId)
         const imageEl = this.createImageEl(item)
         const titleEl = this.createTitleEl(item)
         entityEl.appendChild(imageEl)
         entityEl.appendChild(titleEl)
+        fadeBackgroundEl.appendChild(entityEl)
     },
     createImageEl:function(item){
         const entityEl = document.createElement('a-entity')
         entityEl.setAttribute('visible',true)
         entityEl.setAttribute('geometry',{
             primitive:'plane',
-            width:0.9,
+            width:4,
             height:0.8
         })
         entityEl.setAttribute('material',{
             src:item.bannerUrl
         })
-        entityEl.setAttribute('position',{y:0,z:0.6})
+        entityEl.setAttribute("position", { x: 0, y: 0, z:-5  });
+        entityEl.setAttribute("scale",{x:4,y:5,z:5})
         return entityEl
     },
     createTitleEl:function(item){
