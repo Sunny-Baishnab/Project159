@@ -34,6 +34,13 @@
                     height = '100'
                     rotation = '-90 0 0'>
                 </a-plane>
+                <a-entity
+                id = 'fadeBackground'
+                geometry = 'primitive:sphere; radius:2.5'
+                material = 'color:black; side:back; shader:flat; transparent:true; opacity:0.6'
+                visible = 'false'
+                cursor-listener>
+            </a-entity>
 
                 <a-entity
                 id = 'camera-cursor'
@@ -42,13 +49,7 @@
                 geometry="primitive: ring; radiusInner:0.02; radiusOuter:0.03">
                 </a-entity>
 
-                <a-entity
-                    id = 'fadeBackground'
-                    geometry = 'primitive:sphere; radius:2.5'
-                    material = 'color:black; side:back; shader:flat; transparent:true; opacity:0.6'
-                    visible = 'false'
-                    cursor-listener>
-                </a-entity>
+               
 
             </a-camera>
         </a-scene>
