@@ -49,7 +49,7 @@ AFRAME.registerComponent('cursor-listener',{
         })
     },
     handleMouseClickEvents:function(){
-        this.el.addEventListener('click',e=>{
+        this.el.addEventListener('click',()=>{
             const {selectedItemsId} = this.data
             const fadeBackgroundEl = document.querySelector('#fadeBackground')
             const cursorEl = document.querySelector('#camera-cursor')
